@@ -10,343 +10,373 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream: #F5F2EA;
+  --white: #ffffff;
+  --page:  #F2F0EA;
   --ink:   #18180F;
-  --muted: #7A7870;
+  --muted: #888880;
   --green: #2A5C45;
   --border: rgba(24,24,15,0.10);
+  --pad: 40px;
 }
 
 html { scroll-behavior: smooth; }
-
 body {
   font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
+  background: var(--page);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
 
 /* ── NAV ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   display: flex; justify-content: space-between; align-items: center;
-  padding: 22px 48px;
+  padding: 20px var(--pad);
+  background: var(--page);
 }
 .nav-name {
   font-family: 'DM Serif Display', serif;
-  font-size: 17px; color: #fff;
-  text-decoration: none; letter-spacing: -0.01em;
-  transition: opacity 0.2s;
+  font-size: 17px; color: var(--ink); text-decoration: none;
 }
-.nav-name:hover { opacity: 0.65; }
-.nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a {
-  font-size: 13px; color: rgba(255,255,255,0.60);
-  text-decoration: none; letter-spacing: 0.02em;
-  transition: color 0.2s;
+.nav-right { display: flex; gap: 10px; }
+.nav-btn {
+  font-size: 13px; font-weight: 500; color: var(--ink);
+  text-decoration: none;
+  border: 1.5px solid rgba(24,24,15,0.18);
+  padding: 8px 18px; border-radius: 100px;
+  background: var(--white);
+  transition: background 0.18s, border-color 0.18s;
 }
-.nav-links a:hover { color: #fff; }
-nav.light .nav-name { color: var(--ink); }
-nav.light .nav-links a { color: var(--muted); }
-nav.light .nav-links a:hover { color: var(--ink); }
+.nav-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
 
-/* ── HERO ── */
+/* ── HERO BANNER (rounded card) ── */
+.hero-wrap {
+  padding: 0 var(--pad) 0;
+}
 .hero {
   position: relative;
-  height: 100vh; min-height: 600px;
-  display: flex; flex-direction: column;
-  align-items: flex-start; justify-content: flex-end;
-  padding: 0 48px 60px;
+  border-radius: 20px;
   overflow: hidden;
+  min-height: 420px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 64px 48px 56px;
 }
 #aura {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
+  border-radius: 20px;
 }
-.hero-body { position: relative; z-index: 1; max-width: 680px; }
-
-.hero-intro {
-  font-size: 12px; letter-spacing: 0.10em; text-transform: uppercase;
-  color: rgba(255,255,255,0.50); margin-bottom: 16px;
-}
+.hero-body { position: relative; z-index: 1; max-width: 700px; }
 .hero-headline {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(48px, 7vw, 88px);
-  line-height: 1.0; color: #fff;
-  margin-bottom: 20px; letter-spacing: -0.02em;
-}
-.hero-headline em { font-style: italic; }
-.hero-sub {
   font-family: 'DM Serif Display', serif; font-style: italic;
-  font-size: clamp(16px, 2vw, 21px);
-  color: rgba(255,255,255,0.65); line-height: 1.55;
-  margin-bottom: 36px; max-width: 460px;
+  font-size: clamp(26px, 4vw, 46px);
+  color: #fff; line-height: 1.25;
+  margin-bottom: 40px;
+  text-shadow: 0 1px 24px rgba(0,0,0,0.12);
 }
-.hero-socials { display: flex; gap: 22px; }
-.hero-socials a {
-  font-size: 13px; color: rgba(255,255,255,0.50);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.18); padding-bottom: 1px;
-  transition: color 0.2s, border-color 0.2s;
+.hero-pills { display: flex; gap: 28px; justify-content: center; }
+.hero-pill {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85);
 }
-.hero-socials a:hover { color: #fff; border-color: rgba(255,255,255,0.55); }
+.hero-pill svg { width: 15px; height: 15px; opacity: 0.7; flex-shrink: 0; }
 
-/* ── SECTION LABEL ── */
-.section-label {
-  padding: 64px 48px 28px;
-  display: flex; align-items: center; gap: 20px;
+/* ── TICKER ── */
+.ticker-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  margin: 28px 0 0;
+  padding: 14px 0;
 }
-.section-label span {
+.ticker-track {
+  display: flex; gap: 0;
+  width: max-content;
+  animation: ticker 32s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-item {
+  display: flex; align-items: center; gap: 20px;
+  padding: 0 32px;
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  color: var(--muted); white-space: nowrap;
+}
+.ticker-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--muted); flex-shrink: 0;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── PROJECTS SECTION ── */
+.section-wrap {
+  padding: 40px var(--pad) 0;
+}
+.section-head {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+}
+.section-head span {
   font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
   white-space: nowrap;
 }
-.section-label hr { flex: 1; border: none; border-top: 1px solid var(--border); }
+.section-head hr { flex: 1; border: none; border-top: 1px solid var(--border); }
 
-/* ── PROJECTS ── */
-.projects { display: flex; flex-direction: column; }
-
-.proj {
-  position: relative; height: 520px;
-  overflow: hidden; display: block; text-decoration: none;
+/* project grid: 2 columns top, 1 full bottom */
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
 }
-.proj + .proj { border-top: 1px solid rgba(255,255,255,0.06); }
+.proj-card {
+  position: relative; border-radius: 16px; overflow: hidden;
+  display: block; text-decoration: none;
+  background: #ccc;
+  cursor: pointer;
+}
+.proj-card:nth-child(1) { grid-column: 1; grid-row: 1; height: 380px; }
+.proj-card:nth-child(2) { grid-column: 2; grid-row: 1; height: 380px; }
+.proj-card:nth-child(3) { grid-column: 1 / -1; grid-row: 2; height: 340px; }
 
-.proj-bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+/* placeholder image layer */
+.proj-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.proj-card:hover .proj-img { transform: scale(1.04); }
 
-.proj-sour     { background: #0b2419; }
-.proj-techmoms { background: #1c1209; }
-.proj-chip     { background: #0d1a27; }
-
-.proj-overlay {
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(120deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.04) 100%);
+/* aura canvas for cards without real images */
+.proj-aura-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
 }
 
-.proj-content {
+.proj-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.08) 60%, rgba(0,0,0,0.38) 100%);
+  z-index: 1;
+}
+.proj-card-body {
   position: absolute; inset: 0; z-index: 2;
   display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 52px 56px;
-  transition: padding 0.5s cubic-bezier(0.16,1,0.3,1);
+  padding: 32px 34px;
 }
-.proj:hover .proj-content { padding-bottom: 60px; }
-
-.proj-tag {
-  font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  border: 1px solid rgba(255,255,255,0.18);
-  padding: 5px 14px; border-radius: 100px;
-  width: fit-content; margin-bottom: 18px;
+.proj-card-tag {
+  font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 10px;
 }
-.proj-title {
+.proj-card-title {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(34px, 5vw, 58px);
-  color: #fff; line-height: 1.04;
-  letter-spacing: -0.02em; margin-bottom: 16px;
+  font-size: clamp(22px, 3vw, 32px); color: #fff;
+  line-height: 1.1; letter-spacing: -0.01em;
+  margin-bottom: 8px;
 }
-.proj-title em { font-style: italic; }
-.proj-desc {
-  font-size: 15px; color: rgba(255,255,255,0.55);
-  line-height: 1.70; max-width: 500px; margin-bottom: 28px;
+.proj-card-title em { font-style: italic; }
+.proj-card-desc {
+  font-size: 13px; color: rgba(255,255,255,0.60);
+  line-height: 1.6; margin-bottom: 18px;
+  max-width: 520px;
 }
-.proj-meta { display: flex; align-items: center; gap: 12px; }
-.proj-tools { display: flex; gap: 9px; flex-wrap: wrap; }
+.proj-card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .proj-tool {
-  font-size: 12px; color: rgba(255,255,255,0.40);
-  background: rgba(255,255,255,0.07);
-  padding: 5px 13px; border-radius: 100px;
+  font-size: 11px; color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.10);
+  padding: 4px 12px; border-radius: 100px;
 }
 .proj-arrow {
   margin-left: auto; flex-shrink: 0;
-  width: 38px; height: 38px; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.22);
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.28);
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.55); font-size: 16px;
-  transition: all 0.22s;
+  color: rgba(255,255,255,0.6); font-size: 14px;
+  transition: all 0.2s;
 }
-.proj:hover .proj-arrow {
-  background: rgba(255,255,255,0.14);
-  border-color: rgba(255,255,255,0.5); color: #fff;
-}
+.proj-card:hover .proj-arrow { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.6); color: #fff; }
 
 /* ── ABOUT + EXP ── */
-.about {
+.about-grid {
   display: grid; grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--border);
+  gap: 16px; padding: 16px var(--pad) 0;
 }
-.about-left {
-  padding: 80px 48px;
-  border-right: 1px solid var(--border);
+.about-card {
+  background: var(--white); border-radius: 16px;
+  padding: 40px 36px;
 }
-.about-eyebrow {
+.about-label {
   font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 28px;
+  color: var(--muted); margin-bottom: 24px;
 }
 .about-text {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(22px, 2.6vw, 30px);
-  line-height: 1.45; color: var(--ink); margin-bottom: 36px;
+  font-size: clamp(20px, 2.4vw, 27px);
+  line-height: 1.45; color: var(--ink); margin-bottom: 28px;
 }
 .about-text em { font-style: italic; color: var(--green); }
 .about-link {
-  display: inline-flex; align-items: center; gap: 8px;
   font-size: 13px; font-weight: 500; color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border); padding-bottom: 2px;
-  transition: color 0.2s, border-color 0.2s;
+  text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px;
+  transition: color 0.18s, border-color 0.18s;
 }
 .about-link:hover { color: var(--green); border-color: var(--green); }
 
-.about-right { padding: 80px 48px; }
-.exp-label {
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 32px;
-}
 .exp-row {
   display: flex; justify-content: space-between; align-items: baseline;
-  padding: 18px 0; border-bottom: 1px solid var(--border);
+  padding: 16px 0; border-bottom: 1px solid var(--border);
 }
 .exp-row:first-of-type { border-top: 1px solid var(--border); }
-.exp-role { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
-.exp-org  { font-size: 13px; color: var(--muted); }
-.exp-date { font-size: 12px; color: var(--muted); white-space: nowrap; margin-left: 24px; }
+.exp-role { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+.exp-org  { font-size: 12px; color: var(--muted); }
+.exp-date { font-size: 12px; color: var(--muted); white-space: nowrap; margin-left: 20px; }
 
 /* ── FOOTER ── */
 footer {
-  border-top: 1px solid var(--border);
-  padding: 60px 48px 52px;
+  margin: 40px var(--pad) 40px;
+  background: var(--white); border-radius: 16px;
+  padding: 52px 44px;
   display: flex; justify-content: space-between; align-items: flex-end;
 }
 .footer-hl {
   font-family: 'DM Serif Display', serif;
-  font-size: clamp(28px, 3.8vw, 48px);
-  line-height: 1.1; color: var(--ink);
+  font-size: clamp(26px, 3.5vw, 44px); line-height: 1.15; color: var(--ink);
 }
 .footer-hl em { font-style: italic; color: var(--green); }
 .footer-right { text-align: right; }
 .footer-email {
-  display: block; font-size: 15px; font-weight: 500;
-  color: var(--ink); text-decoration: none;
-  border-bottom: 1px solid var(--border); padding-bottom: 3px;
-  margin-bottom: 10px;
-  transition: color 0.2s, border-color 0.2s;
+  display: block; font-size: 15px; font-weight: 500; color: var(--ink);
+  text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 3px; margin-bottom: 10px;
+  transition: color 0.18s, border-color 0.18s;
 }
 .footer-email:hover { color: var(--green); border-color: var(--green); }
 .footer-copy { font-size: 12px; color: var(--muted); }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 700px) {
-  nav { padding: 20px 24px; }
-  .nav-links { display: none; }
-  .hero { padding: 0 24px 48px; }
-  .section-label { padding: 48px 24px 20px; }
-  .proj-content { padding: 32px 28px; }
-  .proj { height: 460px; }
-  .about { grid-template-columns: 1fr; }
-  .about-left { border-right: none; border-bottom: 1px solid var(--border); padding: 56px 24px; }
-  .about-right { padding: 56px 24px; }
-  footer { flex-direction: column; gap: 32px; padding: 48px 24px; }
+@media (max-width: 680px) {
+  :root { --pad: 18px; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .proj-card:nth-child(1),
+  .proj-card:nth-child(2),
+  .proj-card:nth-child(3) { grid-column: 1; grid-row: auto; height: 320px; }
+  .about-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 28px; }
   .footer-right { text-align: left; }
 }
 </style>
 </head>
 <body>
 
-<nav id="nav">
+<!-- NAV -->
+<nav>
   <a class="nav-name" href="#">Emma Luk</a>
-  <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="mailto:emmahluk@gmail.com">Contact</a></li>
-  </ul>
+  <div class="nav-right">
+    <a class="nav-btn" href="https://github.com/emma-luky" target="_blank">GitHub</a>
+    <a class="nav-btn" href="https://www.linkedin.com/in/emma-h-luk/" target="_blank">LinkedIn</a>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <canvas id="aura"></canvas>
-  <div class="hero-body">
-    <p class="hero-intro">Pleasanton, CA &nbsp;·&nbsp; Software Engineer</p>
-    <h1 class="hero-headline">Emma <em>Luk.</em></h1>
-    <p class="hero-sub">Building products that feel as good as they work — from mobile apps to design systems.</p>
-    <div class="hero-socials">
-      <a href="https://github.com/emma-luky" target="_blank">GitHub</a>
-      <a href="mailto:emmahluk@gmail.com">Email</a>
-      <a href="tel:9253538335">925·353·8335</a>
+<!-- HERO BANNER -->
+<div class="hero-wrap">
+  <div class="hero">
+    <canvas id="aura"></canvas>
+    <div class="hero-body">
+      <p class="hero-headline">Emma is a software engineer with a passion for building beautiful, purposeful products.</p>
+      <div class="hero-pills">
+        <span class="hero-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Pleasanton, CA
+        </span>
+        <span class="hero-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          Radian
+        </span>
+      </div>
     </div>
   </div>
-</section>
-
-<!-- WORK -->
-<div class="section-label" id="work">
-  <span>Selected work</span><hr>
 </div>
 
-<div class="projects">
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="ticker">
+    <!-- filled by JS -->
+  </div>
+</div>
 
-  <div class="proj proj-sour">
-    <canvas class="proj-bg" id="c-sour"></canvas>
-    <div class="proj-overlay"></div>
-    <div class="proj-content">
-      <span class="proj-tag">Mobile App &nbsp;·&nbsp; 2022 – Present</span>
-      <h2 class="proj-title">SOUR — <em>Shop, Own,<br>Upcycle, Reuse.</em></h2>
-      <p class="proj-desc">A social eCommerce app making secondhand fashion accessible. Secured $2,700 in funding and placed Top 8 at the Tim Draper Utah Entrepreneurship Challenge out of 100+ startups.</p>
-      <div class="proj-meta">
-        <div class="proj-tools">
+<!-- PROJECTS -->
+<div class="section-wrap" id="work">
+  <div class="section-head">
+    <span>Selected work</span><hr>
+  </div>
+  <div class="proj-grid">
+
+    <!-- SOUR -->
+    <div class="proj-card">
+      <canvas class="proj-aura-canvas" id="c-sour"></canvas>
+      <div class="proj-card-overlay"></div>
+      <div class="proj-card-body">
+        <p class="proj-card-tag">Mobile App · 2022 – Present</p>
+        <h2 class="proj-card-title">SOUR — <em>Secondhand<br>Fashion.</em></h2>
+        <p class="proj-card-desc">Social eCommerce app making secondhand fashion accessible. $2,700 funded · Top 8 Tim Draper Challenge.</p>
+        <div class="proj-card-meta">
           <span class="proj-tool">Python</span>
           <span class="proj-tool">React Native</span>
           <span class="proj-tool">AWS</span>
+          <div class="proj-arrow">↗</div>
         </div>
-        <div class="proj-arrow">↗</div>
       </div>
     </div>
-  </div>
 
-  <div class="proj proj-techmoms">
-    <canvas class="proj-bg" id="c-techmoms"></canvas>
-    <div class="proj-overlay"></div>
-    <div class="proj-content">
-      <span class="proj-tag">Social Impact &nbsp;·&nbsp; Sep 2023</span>
-      <h2 class="proj-title">TechMoms — <em>1st Place.</em></h2>
-      <p class="proj-desc">Won 1st out of 32 submissions. Designed a marketing strategy, pitch deck, and landing page to help TechMoms drive enrollment — built in Adobe Express and Canva.</p>
-      <div class="proj-meta">
-        <div class="proj-tools">
+    <!-- TECHMOMS -->
+    <div class="proj-card">
+      <canvas class="proj-aura-canvas" id="c-techmoms"></canvas>
+      <div class="proj-card-overlay"></div>
+      <div class="proj-card-body">
+        <p class="proj-card-tag">Social Impact · Sep 2023</p>
+        <h2 class="proj-card-title">TechMoms — <em>1st Place.</em></h2>
+        <p class="proj-card-desc">Won 1st of 32 submissions. Marketing strategy, pitch deck & landing page to drive program enrollment.</p>
+        <div class="proj-card-meta">
           <span class="proj-tool">Adobe Express</span>
           <span class="proj-tool">Canva</span>
           <span class="proj-tool">Strategy</span>
+          <div class="proj-arrow">↗</div>
         </div>
-        <div class="proj-arrow">↗</div>
       </div>
     </div>
-  </div>
 
-  <div class="proj proj-chip">
-    <canvas class="proj-bg" id="c-chip"></canvas>
-    <div class="proj-overlay"></div>
-    <div class="proj-content">
-      <span class="proj-tag">UX / Product Design &nbsp;·&nbsp; Oct 2022 – Dec 2023</span>
-      <h2 class="proj-title">Chip Cookies — <em>Mobile<br>Redesign.</em></h2>
-      <p class="proj-desc">Prototyped a full mobile app redesign for Chip Cookies in Adobe XD, then presented a pitch deck making the business case for the redesign to stakeholders.</p>
-      <div class="proj-meta">
-        <div class="proj-tools">
+    <!-- CHIP COOKIES -->
+    <div class="proj-card">
+      <canvas class="proj-aura-canvas" id="c-chip"></canvas>
+      <div class="proj-card-overlay"></div>
+      <div class="proj-card-body">
+        <p class="proj-card-tag">UX / Product Design · Oct 2022 – Dec 2023</p>
+        <h2 class="proj-card-title">Chip Cookies — <em>Mobile Redesign.</em></h2>
+        <p class="proj-card-desc">Prototyped a full mobile app redesign in Adobe XD. Presented a pitch deck making the business case for the redesign to stakeholders.</p>
+        <div class="proj-card-meta">
           <span class="proj-tool">Adobe XD</span>
           <span class="proj-tool">Prototyping</span>
           <span class="proj-tool">Pitch Deck</span>
+          <div class="proj-arrow">↗</div>
         </div>
-        <div class="proj-arrow">↗</div>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-left">
-    <p class="about-eyebrow">About</p>
+<!-- ABOUT + EXP -->
+<div class="about-grid" id="about">
+  <div class="about-card">
+    <p class="about-label">About</p>
     <p class="about-text">Software engineer with a minor in <em>entrepreneurship</em> — I care as much about why something is built as how it's built.</p>
     <a class="about-link" href="mailto:emmahluk@gmail.com">Get in touch →</a>
   </div>
-  <div class="about-right">
-    <p class="exp-label">Experience</p>
+  <div class="about-card">
+    <p class="about-label">Experience</p>
     <div class="exp-row">
       <div>
         <div class="exp-role">Software Engineer Intern</div>
@@ -364,7 +394,7 @@ footer {
     <div class="exp-row">
       <div>
         <div class="exp-role">BS Software Development</div>
-        <div class="exp-org">University of Utah &nbsp;·&nbsp; GPA 3.9</div>
+        <div class="exp-org">University of Utah · GPA 3.9</div>
       </div>
       <div class="exp-date">2021 – 25</div>
     </div>
@@ -376,7 +406,7 @@ footer {
       <div class="exp-date">2021 – 25</div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -388,8 +418,32 @@ footer {
 </footer>
 
 <script>
-// Shared aura painter
+// ── TICKER ────────────────────────────────────────────────
+const achievements = [
+  "$2,700 in startup funding secured",
+  "Top 8 · Tim Draper Entrepreneurship Challenge",
+  "1st place · TechMoms Social Impact Challenge",
+  "GPA 3.9 · University of Utah",
+  "Dean's List · 4 consecutive years",
+  "Kahlert Scholar",
+  "100+ startups competed · Top 8 finalist",
+  "$1,700 in prize winnings",
+  "BS Software Development · Minor Entrepreneurship",
+  "Society of Women Engineers",
+];
+
+const track = document.getElementById('ticker');
+// duplicate for seamless loop
+[...achievements, ...achievements].forEach(a => {
+  const item = document.createElement('span');
+  item.className = 'ticker-item';
+  item.innerHTML = `${a}<span class="ticker-dot"></span>`;
+  track.appendChild(item);
+});
+
+// ── AURA PAINTER ─────────────────────────────────────────
 function paintAura(canvas, baseFill, blobs) {
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
   function resize() {
     const p = canvas.parentElement;
@@ -400,22 +454,22 @@ function paintAura(canvas, baseFill, blobs) {
   window.addEventListener('resize', resize);
   function draw(t) {
     const W = canvas.width, H = canvas.height;
-    ctx.clearRect(0, 0, W, H);
+    ctx.clearRect(0,0,W,H);
     ctx.fillStyle = baseFill;
-    ctx.fillRect(0, 0, W, H);
+    ctx.fillRect(0,0,W,H);
     blobs.forEach(b => {
       const a  = t * b.sp + b.ph;
       const cx = (b.x + Math.sin(a * 1.2) * 0.20) * W;
-      const cy = (b.y + Math.cos(a * 0.85) * 0.15) * H;
-      const r  = b.r * Math.max(W, H) * 0.72;
-      const g  = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-      const [rr, gr, bl] = b.col;
-      g.addColorStop(0,   `rgba(${rr},${gr},${bl},.50)`);
-      g.addColorStop(0.5, `rgba(${rr},${gr},${bl},.15)`);
+      const cy = (b.y + Math.cos(a * 0.85) * 0.16) * H;
+      const r  = b.r * Math.max(W, H) * 0.75;
+      const g  = ctx.createRadialGradient(cx,cy,0,cx,cy,r);
+      const [rr,gr,bl] = b.col;
+      g.addColorStop(0,   `rgba(${rr},${gr},${bl},.52)`);
+      g.addColorStop(0.5, `rgba(${rr},${gr},${bl},.16)`);
       g.addColorStop(1,   `rgba(${rr},${gr},${bl},0)`);
       ctx.globalCompositeOperation = 'screen';
       ctx.fillStyle = g;
-      ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fill();
     });
     ctx.globalCompositeOperation = 'source-over';
     requestAnimationFrame(draw);
@@ -423,41 +477,36 @@ function paintAura(canvas, baseFill, blobs) {
   requestAnimationFrame(draw);
 }
 
-// Hero
+// Hero — cream & forest green
 paintAura(document.getElementById('aura'), '#0b2318', [
-  {x:.18,y:.35,r:.52,col:[42,92,69],  sp:.00017,ph:0},
-  {x:.80,y:.22,r:.48,col:[74,155,114],sp:.00022,ph:1.3},
-  {x:.55,y:.80,r:.46,col:[15,55,38],  sp:.00014,ph:2.5},
-  {x:.72,y:.55,r:.40,col:[100,180,140],sp:.00020,ph:3.7},
-  {x:.12,y:.72,r:.36,col:[210,230,210],sp:.00018,ph:0.9},
+  {x:.18,y:.40,r:.55,col:[42,92,69],   sp:.00017,ph:0},
+  {x:.78,y:.20,r:.50,col:[74,155,114], sp:.00022,ph:1.3},
+  {x:.55,y:.82,r:.48,col:[15,55,38],   sp:.00014,ph:2.5},
+  {x:.70,y:.55,r:.42,col:[110,190,145],sp:.00019,ph:3.7},
+  {x:.10,y:.70,r:.38,col:[215,235,215],sp:.00016,ph:0.8},
 ]);
 
-// SOUR — greens
-paintAura(document.getElementById('c-sour'), '#0b2419', [
+// SOUR — deep green
+paintAura(document.getElementById('c-sour'), '#0a2016', [
   {x:.15,y:.5, r:.65,col:[42,110,72],  sp:.00013,ph:0},
-  {x:.80,y:.3, r:.55,col:[80,180,120], sp:.00017,ph:2.1},
-  {x:.5, y:.85,r:.50,col:[20,65,45],   sp:.00011,ph:4.2},
+  {x:.80,y:.3, r:.58,col:[80,180,120], sp:.00017,ph:2.1},
+  {x:.5, y:.85,r:.50,col:[20,70,45],   sp:.00011,ph:4.2},
 ]);
 
-// TechMoms — warm amber/orange
-paintAura(document.getElementById('c-techmoms'), '#1c1108', [
+// TechMoms — warm amber
+paintAura(document.getElementById('c-techmoms'), '#1c1008', [
   {x:.2, y:.45,r:.62,col:[160,90,20],  sp:.00014,ph:0.5},
-  {x:.78,y:.25,r:.52,col:[200,130,40], sp:.00019,ph:1.9},
-  {x:.55,y:.80,r:.48,col:[100,55,10],  sp:.00012,ph:3.5},
+  {x:.78,y:.25,r:.55,col:[205,135,45], sp:.00019,ph:1.9},
+  {x:.55,y:.80,r:.50,col:[100,55,10],  sp:.00012,ph:3.5},
 ]);
 
 // Chip — cool blue
-paintAura(document.getElementById('c-chip'), '#0d1a27', [
-  {x:.18,y:.5, r:.62,col:[30,80,160],  sp:.00014,ph:1.0},
-  {x:.80,y:.28,r:.52,col:[50,120,200], sp:.00018,ph:2.8},
-  {x:.55,y:.82,r:.48,col:[15,50,110],  sp:.00012,ph:0.3},
+paintAura(document.getElementById('c-chip'), '#0d1a28', [
+  {x:.18,y:.5, r:.60,col:[30,80,165],  sp:.00014,ph:1.0},
+  {x:.82,y:.28,r:.55,col:[55,125,205], sp:.00018,ph:2.8},
+  {x:.55,y:.82,r:.48,col:[15,50,115],  sp:.00012,ph:0.3},
+  {x:.40,y:.20,r:.42,col:[80,160,220], sp:.00016,ph:4.0},
 ]);
-
-// Nav color switch on scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('light', window.scrollY > window.innerHeight - 80);
-});
 </script>
 </body>
 </html>
