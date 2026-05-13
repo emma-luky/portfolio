@@ -49,6 +49,11 @@ paintAura(document.getElementById('c-sour'), '#ba8e23', [
   {x:.80,y:.3, r:.58,col:[80,180,120], sp:.00017,ph:2.1},
   {x:.5, y:.85,r:.50,col:[20,70,45],   sp:.00011,ph:4.2},
 ]);
+paintAura(document.getElementById('c-next-sour'), '#ba8e23', [
+  {x:.15,y:.5, r:.65,col:[42,110,72],  sp:.00013,ph:0},
+  {x:.80,y:.3, r:.58,col:[80,180,120], sp:.00017,ph:2.1},
+  {x:.5, y:.85,r:.50,col:[20,70,45],   sp:.00011,ph:4.2},
+]);
 
 // TechMoms — deep plum
 paintAura(document.getElementById('c-techmoms'), '#3D1A35 ', [
