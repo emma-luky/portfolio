@@ -3,10 +3,10 @@
     gap: 16px;
     /* 2 values: top/bottom   left/right */
     margin: 0px 40px;
-    height: 380px;
-
 }
 .next-project {
+display: flex;
+flex-wrap: wrap;
   flex: 1;
   margin: 40px 0px 0px;
   background: var(--white); border-radius: 16px;
@@ -14,7 +14,7 @@
   display: flex; justify-content: space-between; align-items: flex-end;
   position: relative;   /* ADD */
   overflow: hidden;     /* ADD */
-  min-height: 200px;    /* ADD — gives the canvas something to measure */
+  min-height: 380px;    /* ADD — gives the canvas something to measure */
 }
 #c-next-sour {
   position: absolute;
@@ -40,6 +40,7 @@
 .next-title em { font-style: italic; color: var(--page); }
 .next-arrow {
   width: 52px; height: 52px; border-radius: 50%;
+  margin-top: 10px;
   border: 1.5px solid rgba(255,255,255,0.25);
   display: flex; align-items: center; justify-content: center;
   color: rgba(255,255,255,0.6); font-size: 22px;

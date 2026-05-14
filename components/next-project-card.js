@@ -6,7 +6,7 @@ function createNextProjectCard({ id, href, title, titleEm, desc, tools }) {
 
   a.innerHTML = `
     <canvas class="proj-aura-canvas" id="${id}"></canvas>
-    <div>
+    <div style="width: 80%">
       <p class="next-label">Next project</p>
       <p class="next-title">${title} — <em>${titleEm}</em></p>
       <p class="next-desc">${desc}</p>
