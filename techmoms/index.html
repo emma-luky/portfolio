@@ -1,33 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emma Luk | Tech Moms</title>
-<link rel="icon" href="../assets/emma.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Luk | Tech Moms</title>
+    <link rel="icon" href="../assets/emma.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/next-projects.css">
 </head>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <button class="lightbox-arrow left" id="lightbox-prev">←</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <button class="lightbox-arrow right" id="lightbox-next">→</button>
+</div>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-name" href="#">Emma Luk</a>
-  <div class="nav-right">
-    <a class="nav-btn" href="https://github.com/emma-luky" target="_blank">GitHub</a>
-    <a class="nav-btn" href="https://www.linkedin.com/in/emma-h-luk/" target="_blank">LinkedIn</a>
-  </div>
-</nav>
+    <!-- NAV -->
+    <nav>
+        <a class="nav-name" href="../index.html">Emma Luk</a>
+        <div class="nav-right">
+            <a class="nav-btn" href="https://github.com/emma-luky" target="_blank">GitHub</a>
+            <a class="nav-btn" href="https://www.linkedin.com/in/emma-h-luk/" target="_blank">LinkedIn</a>
+        </div>
+    </nav>
 
-<!-- FOOTER -->
-<footer>
-  <p class="footer-hl">Let's build something<br><em>worth keeping.</em></p>
-  <div class="footer-right">
-    <a class="footer-email" href="mailto:emmahluk@gmail.com">emmahluk@gmail.com</a>
-    <p class="footer-copy">© 2025 Emma Luk</p>
-  </div>
-</footer>
+    <!-- HERO -->
+    <div class="hero-wrap">
+        <div class="hero">
+            <canvas id="c-hero"></canvas>
+                <p class="hero-label">Social Impact · Sep 2023</p>
+                <h1 class="hero-title">TechMoms — <em>Marketing<br/>Strategy</em></h1>
+                <p class="hero-desc">Won 1st place out of 32 submissions in the Adobe Social Impact Challenge by redesigning
+                    how
+                    TechMoms reaches and enrolls mothers into tech programs.</p>
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Competition</div>
+                        <div class="meta-value">Adobe Social Impact Challenge</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Result</div>
+                        <div class="meta-value">1st place / 32 submissions</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Role</div>
+                        <div class="meta-value">Strategy, Design, Copywriting</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Tools</div>
+                        <div class="meta-value">Adobe Express · Canva</div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- CONTEXT -->
+    <div class="case-section">
+        <p class="section-eyebrow">Context</p>
+        <h2 class="section-headline">Helping mothers break into <em>tech</em></h2>
+        <p class="section-body">TechMoms is a nonprofit that provides accessible, community-driven tech education to
+            mothers.</p>
+        <p class="section-body">The Adobe Social Impact Challenge asked teams to use Adobe tools to make a measurable
+            difference for a nonprofit. We set out to redesign TechMoms marketing strategy.</p>
+    </div>
+
+    <!-- PROBLEMS -->
+    <div class="case-section">
+        <p class="section-eyebrow">Problems</p>
+        <h2 class="section-headline">Strong impact, <em>limited reach</em></h2>
+        <p class="section-body">Despite a powerful mission, their outreach struggled to reach the women who needed it most — the
+            marketing lacked clarity, urgency, and visual consistency. The challenges were clear:</p>
+    </div>
+
+    <!-- CHALLENGE BLOCK -->
+    <div class="challenge-block">
+        <div class="challenge-inner">
+            <p class="challenge-label">The Challenge</p>
+            <p class="challenge-text">"How might we increase awareness of TechMoms' programs and drive meaningful
+                enrollment across diverse, underserved communities?"</p>
+        </div>
+    </div>
+
+    <!-- PRINCIPLES -->
+    <div class="principles">
+        <p class="section-eyebrow">Strategy Pillars</p>
+        <h2 class="section-headline">Four ways to <em>grow</em></h2>
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-num">01</div>
+                <p class="principle-title">Market Programs & Alumni</p>
+                <p class="principle-desc">Leverage alumni success stories and testimonials to make the value proposition
+                    tangible and emotionally compelling.</p>
+            </div>
+            <div class="principle-card">
+                <div class="principle-num">02</div>
+                <p class="principle-title">Expand Target Audiences</p>
+                <p class="principle-desc">Reach underserved communities — including Latinas and women of color — with
+                    targeted programs and bilingual materials.</p>
+            </div>
+            <div class="principle-card">
+                <div class="principle-num">03</div>
+                <p class="principle-title">Improve Website Effectiveness</p>
+                <p class="principle-desc">Redesign the site to be more inviting, clarify calls-to-action, separate
+                    program applications, and reduce repetition.</p>
+            </div>
+            <div class="principle-card" style="grid-column: 1 / -1;">
+                <div class="principle-num">04</div>
+                <p class="principle-title">Partner with Non-profits</p>
+                <p class="principle-desc">Collaborate with organizations like The Road Home, YWCA, and the Rape Recovery
+                    Center to bring TechMoms directly to women who need a fresh start — meeting them where they are and
+                    lowering the barrier to entry.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DELIVERABLES -->
+    <div class="deliverables">
+        <p class="section-eyebrow">Deliverables</p>
+        <h2 class="section-headline">What we <em>built</em></h2>
+        <div class="deliverables-grid">
+
+            <div class="deliverable-card" id="flyers-card">
+                <div class="deliverable-img">
+                    <canvas id="c-flyers"></canvas>
+                    <p class="deliverable-img-label">Connectando Mamas en Tech — Flyers</p>
+                </div>
+                <div class="deliverable-body">
+                    <p class="deliverable-title">Program Flyers</p>
+                    <p class="deliverable-desc">Bilingual flyers for Connectando Mamas en Tech targeting ESL mothers and
+                        flyers for Tech Moms in olor —
+                        distributed across coffee shops, buses, and online.</p>
+                </div>
+            </div>
+
+            <div class="deliverable-card" id="social-card">
+                <div class="deliverable-img">
+                    <canvas id="c-social"></canvas>
+                    <p class="deliverable-img-label">Social Media Mockups</p>
+                </div>
+                <div class="deliverable-body">
+                    <p class="deliverable-title">Social Media Posts</p>
+                    <p class="deliverable-desc">Instagram mockups for Hola Mamas events and the Connectando Mamas en
+                        Tech launch — designed in Canva with the TechMoms brand in mind.</p>
+                </div>
+            </div>
+
+            <div class="deliverable-card" id="posters-card">
+                <div class="deliverable-img">
+                    <canvas id="c-posters"></canvas>
+                    <p class="deliverable-img-label">Poster Collateral — "Alcanza Tu Máximo Potencial"</p>
+                </div>
+                <div class="deliverable-body">
+                    <p class="deliverable-title">Poster Collateral</p>
+                    <p class="deliverable-desc">Out-of-home advertising mocked up for transit and billboard placements.
+                        Bold Spanish-language headline: "Alcanza Tu Máximo Potencial — Join Our Program Today."</p>
+                </div>
+            </div>
+
+            <script src="../components/lightbox.js"></script>
+            <script>
+                initLightbox([
+                    {
+                        id: 'flyers-card',
+                        images: [
+                            '../assets/flyer-mamas-en-tech.jpeg',
+                            '../assets/flyer-moms-in-color.jpeg',
+                        ]
+                    },
+                    {
+                        id: 'social-card',
+                        images: [
+                            '../assets/social-mamas-en-tech.jpeg',
+                            '../assets/social-moms-in-color.jpeg',
+                        ]
+                    },
+                    {
+                        id: 'posters-card',
+                        images: [
+                            '../assets/poster-mamas-en-tech.jpeg',
+                        ]
+                    },
+                ]);
+            </script>
+
+            <a class="deliverable-card" href="https://new.express.adobe.com/webpage/Ezns39DR7Jp2Z" target="_blank"
+                style="text-decoration:none;">
+                <div class="deliverable-img">
+                    <canvas id="c-web"></canvas>
+                    <p class="deliverable-img-label">Website Redesign — Adobe Express</p>
+                </div>
+                <div class="deliverable-body">
+                    <p class="deliverable-title">Live Website Redesign</p>
+                    <p class="deliverable-desc">A fully live redesign of the TechMoms website built in Adobe Express —
+                        strong CTAs, separate program applications, and a professional brand identity.
+                    </p>
+                    <p style="font-size: 13px; color:var(--plum);text-decoration:underline; line-height: 1.6;">
+                        View live →
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- OUTCOME -->
+    <div class="outcome">
+        <p class="section-eyebrow">Outcome</p>
+        <h2 class="section-headline">The <em>result.</em></h2>
+        <p class="section-body" style="margin-top:16px;">Our comprehensive strategy — spanning research, design,
+            and a live prototype — earned 1st place out of 32 submissions in the Adobe Social Impact
+            Challenge 2023.</p>
+        <div class="outcome-stat-row">
+            <div class="outcome-stat">
+                <div class="stat-num">1st</div>
+                <div class="stat-lbl">Place out of<br>32 submissions</div>
+            </div>
+            <div class="outcome-stat">
+                <div class="stat-num">4</div>
+                <div class="stat-lbl">Deliverable types:<br>flyers, social, posters, web</div>
+            </div>
+            <div class="outcome-stat">
+                <div class="stat-num">2</div>
+                <div class="stat-lbl">New programs<br>proposed & pitched</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAKEAWAYS -->
+    <div class="takeaways">
+        <p class="section-eyebrow">Takeaways</p>
+        <h2 class="section-headline">What I <em>learned.</em></h2>
+        <div class="takeaway-list">
+            <div class="takeaway-item">
+                <div class="takeaway-num">01</div>
+                <p class="takeaway-text"><strong>Research first, design second:</strong> The most effective marketing
+                    decisions came from understanding TechMoms' existing alumni and their stories — data and
+                    testimonials shaped every design choice.</p>
+            </div>
+            <div class="takeaway-item">
+                <div class="takeaway-num">02</div>
+                <p class="takeaway-text"><strong>Inclusive design is intentional:</strong> Reaching Latina and
+                    underserved communities required more than translation — it meant rethinking channels, tone,
+                    imagery, and program structure entirely.</p>
+            </div>
+            <div class="takeaway-item">
+                <div class="takeaway-num">03</div>
+                <p class="takeaway-text"><strong>A live prototype wins arguments:</strong> Building the actual Adobe
+                    Express website and coming in with detailed social media let judges see the vision in our actions
+                    and gave our pitch
+                    undeniable credibility.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEXT PROJECT -->
+    <div class="next-projects">
+        <!-- auto filld by next-project-card.js-->
+        <script src="../components/next-project-card.js"></script>
+        <script>
+            createNextProjectCard({
+                id: 'c-next-sour',
+                href: 'https://sour.clothing',
+                title: 'SOUR',
+                titleEm: 'Shop, Own, Upcycle, Reuse.',
+                desc: 'Social eCommerce app making secondhand fashion accessible. $2,700 funded · Top 8 Tim Draper Challenge.',
+                tools: ['Python', 'React Native', 'AWS'],
+                base: '#ba8e23',
+                blobs: [
+                    { x: .15, y: .5, r: .65, col: [200, 150, 30], sp: .00013, ph: 0 },
+                    { x: .80, y: .3, r: .58, col: [230, 180, 50], sp: .00017, ph: 2.1 },
+                    { x: .5, y: .85, r: .50, col: [150, 100, 10], sp: .00011, ph: 4.2 },
+                ]
+            });
+
+            createNextProjectCard({
+                id: 'c-next-chip',
+                href: '../chipcookies/index',
+                title: 'Chip Cookies',
+                titleEm: 'Mobile Redesign.',
+                desc: 'Prototyped a full mobile app redesign in Adobe XD. Presented a pitch deck making the business case for the redesign to stakeholders.',
+                tools: ['Adobe XD', 'Prototyping', 'Pitch Deck'],
+                base: '#0d1a28',
+                blobs: [
+                    { x: .18, y: .5, r: .60, col: [30, 80, 165], sp: .00014, ph: 1.0 },
+                    { x: .82, y: .28, r: .55, col: [55, 125, 205], sp: .00018, ph: 2.8 },
+                    { x: .55, y: .82, r: .48, col: [15, 50, 115], sp: .00012, ph: 0.3 },
+                ]
+            });
+        </script>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="footer-hl">Let's build something<br><em>worth keeping.</em></p>
+        <div class="footer-right">
+            <a class="footer-email" href="mailto:emmahluk@gmail.com">emmahluk@gmail.com</a>
+            <p class="footer-copy">© 2025 Emma Luk</p>
+        </div>
+    </footer>
+
+    <script src="../components/aura.js"></script>
 
 </body>
+
 </html>

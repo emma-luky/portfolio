@@ -1,0 +1,83 @@
+.next-projects {
+    display: flex;
+    gap: 16px;
+    /* 2 values: top/bottom   left/right */
+    margin: 0px 40px;
+    height: 380px;
+
+}
+.next-project {
+  flex: 1;
+  margin: 40px 0px 0px;
+  background: var(--white); border-radius: 16px;
+  padding: 56px 52px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+  position: relative;   /* ADD */
+  overflow: hidden;     /* ADD */
+  min-height: 200px;    /* ADD — gives the canvas something to measure */
+}
+#c-next-sour {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.next-project > div,
+.next-project > .next-arrow {
+  position: relative;
+  z-index: 1;
+}
+.next-label {
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); margin-bottom: 14px;
+}
+.next-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(26px, 3.5vw, 42px);
+  color: #fff; line-height: 1.1;
+}
+.next-title em { font-style: italic; color: var(--page); }
+.next-arrow {
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.6); font-size: 22px;
+  text-decoration: none; flex-shrink: 0;
+  transition: all 0.2s;
+}
+.next-project:hover .next-arrow {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border-color: rgba(255,255,255,0.5);
+} 
+.next-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+.next-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.next-tool {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    background: rgba(255,255,255,0.10);
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  :root { --pad: 22px; }
+  .principles-grid { grid-template-columns: 1fr; }
+  .deliverables-grid { grid-template-columns: 1fr; }
+  .outcome-stat-row { flex-direction: column; }
+  .outcome-stat { border-right: none; border-bottom: 1px solid var(--border); }
+  .outcome-stat:last-child { border-bottom: none; }
+  .next-project { flex-direction: column; gap: 28px; align-items: flex-start; }
+  .challenge-inner { padding: 36px 28px; }
+}
