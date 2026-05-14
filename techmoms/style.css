@@ -20,27 +20,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
  
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 20px var(--pad);
-  background: rgba(242,240,234,0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-back {
-  font-size: 13px; color: var(--muted); text-decoration: none;
-  display: flex; align-items: center; gap: 6px;
-  transition: color 0.18s;
-}
-.nav-back:hover { color: var(--ink); }
-.nav-name {
-  font-family: 'DM Serif Display', serif;
-  font-size: 17px; color: var(--ink); text-decoration: none;
-}
- 
 /* ── HERO ── */
 .hero {
     position: relative;

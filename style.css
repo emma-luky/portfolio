@@ -21,9 +21,13 @@ body {
 
 /* ── NAV ── */
 nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 20px var(--pad);
-  background: var(--page);
+  background: rgba(242,240,234,0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 .nav-name {
   font-family: 'DM Serif Display', serif;
