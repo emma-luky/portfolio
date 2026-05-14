@@ -67,11 +67,12 @@ paintAura(document.getElementById('c-techmoms'), '#3D1A35', [
   {x:.78,y:.25,r:.55,col:[205,135,45], sp:.00019,ph:1.9},
   {x:.55,y:.80,r:.50,col:[100,55,10],  sp:.00012,ph:3.5},
 ]);
-paintAura(document.getElementById('c-hero'),    '#3D1A35', plumBlobs);
-paintAura(document.getElementById('c-mission'), '#3D1A35', [
-  {x:.3,y:.5,r:.6,col:[42,157,143],sp:.00012,ph:0},
-  {x:.8,y:.3,r:.5,col:[80,30,65], sp:.00016,ph:2.5},
+paintAura(document.getElementById('c-next-techmoms'), '#3D1A35', [
+  {x:.2, y:.45,r:.62,col:[160,90,20],  sp:.00014,ph:0.5},
+  {x:.78,y:.25,r:.55,col:[205,135,45], sp:.00019,ph:1.9},
+  {x:.55,y:.80,r:.50,col:[100,55,10],  sp:.00012,ph:3.5},
 ]);
+paintAura(document.getElementById('c-techmoms-hero'),    '#3D1A35', plumBlobs);
 paintAura(document.getElementById('c-flyers'),  '#3D1A35', [
   {x:.2,y:.5,r:.7,col:[42,157,143],sp:.00014,ph:0.3},
   {x:.75,y:.4,r:.55,col:[61,26,53],sp:.00018,ph:1.8},
@@ -101,4 +102,25 @@ paintAura(document.getElementById('c-next-chip'), '#0d1a28', [
   {x:.82,y:.28,r:.55,col:[55,125,205], sp:.00018,ph:2.8},
   {x:.55,y:.82,r:.48,col:[15,50,115],  sp:.00012,ph:0.3},
   {x:.40,y:.20,r:.42,col:[80,160,220], sp:.00016,ph:4.0},
+]);
+// Gold palette for Chip Cookies
+const goldBlobs = [
+    { x: .18, y: .40, r: .55, col: [186, 142, 35],  sp: .00017, ph: 0   },
+    { x: .78, y: .20, r: .50, col: [230, 180, 50],  sp: .00022, ph: 1.3 },
+    { x: .55, y: .82, r: .48, col: [140, 100, 20],  sp: .00014, ph: 2.5 },
+    { x: .70, y: .55, r: .42, col: [200, 160, 60],  sp: .00019, ph: 3.7 },
+    { x: .10, y: .70, r: .38, col: [240, 220, 160], sp: .00016, ph: 0.8 },
+];
+
+paintAura(document.getElementById('c-chip-hero'),      '#2a1f05', goldBlobs);
+paintAura(document.getElementById('c-wireframe'), '#2a1f05', goldBlobs);
+
+paintAura(document.getElementById('c-syd'), '#1a1005', [
+    { x: .2,  y: .5,  r: .65, col: [186, 142, 35], sp: .00013, ph: 0   },
+    { x: .8,  y: .3,  r: .55, col: [230, 180, 50], sp: .00017, ph: 2.1 },
+]);
+
+paintAura(document.getElementById('c-marshall'), '#1a1005', [
+    { x: .3,  y: .6,  r: .60, col: [200, 160, 40], sp: .00014, ph: 1.0 },
+    { x: .75, y: .25, r: .52, col: [150, 110, 20], sp: .00018, ph: 3.2 },
 ]);
