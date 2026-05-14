@@ -45,7 +45,7 @@ body {
 .section-headline em { font-style: italic; color: var(--plum); }
 .section-body {
   font-size: 15px; line-height: 1.8; color: var(--muted);
-  max-width: 620px;
+  max-width: 900px;
 }
 .section-body + .section-body { margin-top: 16px; }
  

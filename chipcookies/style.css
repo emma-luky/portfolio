@@ -46,7 +46,7 @@ nav {
     font-size: 15px;
     line-height: 1.8;
     color: var(--muted);
-    max-width: 620px;
+    max-width: 900px;
 }
 
 .section-body + .section-body { margin-top: 16px; }
@@ -180,13 +180,14 @@ nav {
 /* ── FULL IMAGE ── */
 .full-img {
     width: 100%;
-    padding: 64px 48px 0;
+    padding: 40px 48px 0;
 }
 
 .full-img .img-block {
-    width: 100%;
+    display: flex;
+    justify-self: center;
+    width: auto;
     border-radius: 16px;
-    overflow: hidden;
     position: relative;
     height: 480px;
 }
