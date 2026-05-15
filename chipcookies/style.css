@@ -288,43 +288,6 @@ nav {
 .takeaway-text { font-size: 15px; line-height: 1.7; color: var(--muted); }
 .takeaway-text strong { color: var(--ink); font-weight: 500; }
 
-/* ── FOOTER ── */
-footer {
-    margin: 40px 40px 40px;
-    background: var(--white);
-    border-radius: 16px;
-    padding: 52px 44px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.footer-hl {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(26px, 3.5vw, 44px);
-    line-height: 1.1;
-    color: var(--ink);
-}
-
-.footer-hl em { font-style: italic; color: var(--gold); }
-
-.footer-right { text-align: right; }
-
-.footer-email {
-    display: block;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 3px;
-    margin-bottom: 10px;
-    transition: color 0.18s, border-color 0.18s;
-}
-
-.footer-email:hover { color: var(--gold); border-color: var(--gold); }
-.footer-copy { font-size: 12px; color: var(--muted); }
-
 /* ── RESPONSIVE ── */
 @media (max-width: 680px) {
     .hero-wrap { margin: 64px 16px 0; }
@@ -345,6 +308,4 @@ footer {
     .outcome-stat:last-child { border-bottom: none; }
     .next-projects { flex-direction: column; height: auto; padding: 0 24px; }
     .next-project { min-height: 240px; }
-    footer { flex-direction: column; gap: 28px; margin: 40px 16px; }
-    .footer-right { text-align: left; }
 }

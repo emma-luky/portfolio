@@ -19,13 +19,8 @@
 <body>
 
     <!-- NAV -->
-    <nav>
-        <a class="nav-name" href="../index.html">Emma Luk</a>
-        <div class="nav-right">
-            <a class="nav-btn" href="https://github.com/emma-luky" target="_blank">GitHub</a>
-            <a class="nav-btn" href="https://www.linkedin.com/in/emma-h-luk/" target="_blank">LinkedIn</a>
-        </div>
-    </nav>
+    <script src="../components/nav.js"></script>
+    <script>createNav();</script>
 
     <!-- HERO -->
     <div class="hero-wrap">
@@ -209,7 +204,8 @@
             <div class="takeaway-item">
                 <div class="takeaway-num">01</div>
                 <p class="takeaway-text"><strong>UX principles:</strong> Applying Jakob's Law, Fitt's Law, and Nielsen's
-                    heuristics wasn't purly academic — each decision directly reduced friction in the ordering flow and made
+                    heuristics wasn't purly academic — each decision directly reduced friction in the ordering flow and
+                    made
                     the prototype feel natural.</p>
             </div>
             <div class="takeaway-item">
@@ -234,7 +230,7 @@
         <script>
             createNextProjectCard({
                 id: 'c-next-sour',
-                href: 'https://sour.clothing',
+                href: '../sour/',
                 title: 'SOUR',
                 titleEm: 'Shop, Own, Upcycle, Reuse',
                 desc: 'Social eCommerce app making secondhand fashion accessible. $2,700 funded · Top 8 Tim Draper Challenge.',
@@ -243,7 +239,7 @@
 
             createNextProjectCard({
                 id: 'c-next-techmoms',
-                href: '../techmoms/index.html',
+                href: '../techmoms/',
                 title: 'TechMoms',
                 titleEm: 'Marketing Strategy.',
                 desc: 'Won 1st place out of 32 submissions in the Adobe Social Impact Challenge.',
@@ -253,13 +249,8 @@
     </div>
 
     <!-- FOOTER -->
-    <footer>
-        <p class="footer-hl">Let's build something<br><em>worth keeping.</em></p>
-        <div class="footer-right">
-            <a class="footer-email" href="mailto:emmahluk@gmail.com">emmahluk@gmail.com</a>
-            <p class="footer-copy">© 2025 Emma Luk</p>
-        </div>
-    </footer>
+    <script src="../components/footer.js"></script>
+    <script>createFooter('../assets');</script>
 
     <script src="../components/aura.js"></script>
 
