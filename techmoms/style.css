@@ -1,6 +1,4 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
-:root {
+ :root {
   --page:   #F2F0EA;
   --white:  #ffffff;
   --ink:    #18180F;
@@ -9,15 +7,6 @@
   --teal:   #2A9D8F;
   --green: #2A5C45;
   --border: rgba(24,24,15,0.10);
-  --pad: 48px;
-}
- 
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--page);
-  color: var(--ink);
-  -webkit-font-smoothing: antialiased;
 }
  
 /* ── HERO CANVAS ── */
