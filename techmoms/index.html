@@ -27,41 +27,36 @@
 <body>
 
     <!-- NAV -->
-    <nav>
-        <a class="nav-name" href="../index.html">Emma Luk</a>
-        <div class="nav-right">
-            <a class="nav-btn" href="https://github.com/emma-luky" target="_blank">GitHub</a>
-            <a class="nav-btn" href="https://www.linkedin.com/in/emma-h-luk/" target="_blank">LinkedIn</a>
-        </div>
-    </nav>
+    <script src="../components/nav.js"></script>
+    <script>createNav();</script>
 
     <!-- HERO -->
     <div class="hero-wrap">
         <div class="hero">
             <canvas id="c-techmoms-hero"></canvas>
-                <p class="hero-label">Social Impact · Sep 2023</p>
-                <h1 class="hero-title">TechMoms — <em>Marketing<br/>Strategy</em></h1>
-                <p class="hero-desc">Won 1st place out of 32 submissions in the Adobe Social Impact Challenge by redesigning
-                    how
-                    TechMoms reaches and enrolls mothers into tech programs.</p>
-                <div class="hero-meta">
-                    <div class="meta-item">
-                        <div class="meta-label">Competition</div>
-                        <div class="meta-value">Adobe Social Impact Challenge</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Result</div>
-                        <div class="meta-value">1st place / 32 submissions</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Role</div>
-                        <div class="meta-value">Strategy, Design, Copywriting</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Tools</div>
-                        <div class="meta-value">Adobe Express · Canva</div>
-                    </div>
+            <p class="hero-label">Social Impact · Sep 2023</p>
+            <h1 class="hero-title">TechMoms — <em>Marketing<br />Strategy</em></h1>
+            <p class="hero-desc">Won 1st place out of 32 submissions in the Adobe Social Impact Challenge by redesigning
+                how
+                TechMoms reaches and enrolls mothers into tech programs.</p>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Competition</div>
+                    <div class="meta-value">Adobe Social Impact Challenge</div>
                 </div>
+                <div class="meta-item">
+                    <div class="meta-label">Result</div>
+                    <div class="meta-value">1st place / 32 submissions</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">Strategy, Design, Copywriting</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Tools</div>
+                    <div class="meta-value">Adobe Express · Canva</div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -79,7 +74,8 @@
     <div class="case-section">
         <p class="section-eyebrow">Problems</p>
         <h2 class="section-headline">Strong impact, <em>limited reach</em></h2>
-        <p class="section-body">Despite a powerful mission, their outreach struggled to reach the women who needed it most — the
+        <p class="section-body">Despite a powerful mission, their outreach struggled to reach the women who needed it
+            most — the
             marketing lacked clarity, urgency, and visual consistency. The challenges were clear:</p>
     </div>
 
@@ -270,15 +266,16 @@
         <script>
             createNextProjectCard({
                 id: 'c-next-sour',
-                href: 'https://sour.clothing',
+                href: '../sour/',
                 title: 'SOUR',
                 titleEm: 'Shop, Own, Upcycle, Reuse.',
                 desc: 'Social eCommerce app making secondhand fashion accessible. $2,700 funded · Top 8 Tim Draper Challenge.',
-                tools: ['Figma', 'Python', 'React Native', 'AWS']});
+                tools: ['Figma', 'Python', 'React Native', 'AWS']
+            });
 
             createNextProjectCard({
                 id: 'c-next-chip',
-                href: '../chipcookies/index',
+                href: '../chipcookies/',
                 title: 'Chip Cookies',
                 titleEm: 'Mobile Redesign.',
                 desc: 'Prototyped a full mobile app redesign in Adobe XD. Presented a pitch deck making the business case for the redesign to stakeholders.',
@@ -288,13 +285,8 @@
     </div>
 
     <!-- FOOTER -->
-    <footer>
-        <p class="footer-hl">Let's build something<br><em>worth keeping.</em></p>
-        <div class="footer-right">
-            <a class="footer-email" href="mailto:emmahluk@gmail.com">emmahluk@gmail.com</a>
-            <p class="footer-copy">© 2025 Emma Luk</p>
-        </div>
-    </footer>
+    <script src="../components/footer.js"></script>
+    <script>createFooter('../assets');</script>
 
     <script src="../components/aura.js"></script>
 

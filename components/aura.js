@@ -44,18 +44,15 @@ paintAura(document.getElementById('aura'), '#0b2318', [
 ]);
 
 // SOUR — warm terracotta + orange
-paintAura(document.getElementById('c-sour'), '#5c2010', [
+const yellowBlobs = [
   {x:.15,y:.5, r:.65,col:[255,176,30],  sp:.00013,ph:0},
   {x:.80,y:.3, r:.58,col:[126,180,81],  sp:.00017,ph:2.1},
   {x:.5, y:.85,r:.50,col:[255,219,50],  sp:.00011,ph:4.2},
   {x:.30,y:.20,r:.44,col:[180,220,100], sp:.00015,ph:1.8},
-]);
-paintAura(document.getElementById('c-next-sour'), '#5c2010', [
-  {x:.15,y:.5, r:.65,col:[255,176,30],  sp:.00013,ph:0},
-  {x:.80,y:.3, r:.58,col:[126,180,81],  sp:.00017,ph:2.1},
-  {x:.5, y:.85,r:.50,col:[255,219,50],  sp:.00011,ph:4.2},
-  {x:.30,y:.20,r:.44,col:[180,220,100], sp:.00015,ph:1.8},
-]);
+];
+paintAura(document.getElementById('c-sour'), '#5c2010', yellowBlobs);
+paintAura(document.getElementById('c-sour-hero'), '#5c2010', yellowBlobs);
+paintAura(document.getElementById('c-next-sour'), '#5c2010', yellowBlobs);
 
 // TechMoms — deep plum + teal
 const plumBlobs = [

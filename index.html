@@ -1,179 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emma Luk</title>
-<link rel="icon" href="assets/emma.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma Luk</title>
+    <link rel="icon" href="assets/emma.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-name" href="#">Emma Luk</a>
-  <div class="nav-right">
-    <a class="nav-btn" href="https://github.com/emma-luky" target="_blank">GitHub</a>
-    <a class="nav-btn" href="https://www.linkedin.com/in/emma-h-luk/" target="_blank">LinkedIn</a>
-  </div>
-</nav>
+    <!-- NAV -->
+    <script src="./components/nav.js"></script>
+    <script>createNav();</script>
 
-<!-- HERO BANNER -->
-<div class="hero-wrap">
-  <div class="hero">
-    <canvas id="aura"></canvas>
-    <div class="hero-body">
-      <p class="hero-headline">Emma is a software engineer with a passion for crafting user-first experiences from concept to implementation.</p>
-      <div class="hero-pills">
-        <span class="hero-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          Pleasanton, CA
-        </span>
-        <span class="hero-pill">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-          Student
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-track" id="ticker">
-    <!-- filled by JS -->
-  </div>
-</div>
-
-<!-- PROJECTS -->
-<div class="section-wrap" id="work">
-  <div class="section-head">
-    <span>Selected work</span><hr>
-  </div>
-  <div class="proj-grid">
-
-    <!-- SOUR -->
-    <a href="https://sour.clothing" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-        <div class="proj-card">
-        <canvas class="proj-aura-canvas" id="c-sour"></canvas>
-        <div class="proj-card-overlay"></div>
-        <div class="proj-card-body">
-            <p class="proj-card-tag">Mobile App · 2022 – Present</p>
-            <h2 class="proj-card-title">SOUR — <em>Secondhand<br>Fashion</em></h2>
-            <p class="proj-card-desc">Social eCommerce app making secondhand fashion accessible. $2,700 funded · Top 8 Tim Draper Challenge.</p>
-            <div class="proj-card-meta">
-                <span class="proj-tool">Figma</span>
-                <span class="proj-tool">Python</span>
-                <span class="proj-tool">React Native</span>
-                <span class="proj-tool">AWS</span>
-                <div class="proj-arrow">↗</div>
+    <!-- HERO BANNER -->
+    <div class="hero-wrap">
+        <div class="hero">
+            <canvas id="aura"></canvas>
+            <div class="hero-body">
+                <p class="hero-headline">Emma is a software engineer with a passion for crafting user-first experiences
+                    from concept to implementation.</p>
+                <div class="hero-pills">
+                    <span class="hero-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                            <circle cx="12" cy="9" r="2.5" />
+                        </svg>
+                        Pleasanton, CA
+                    </span>
+                    <span class="hero-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" />
+                            <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                        </svg>
+                        Student
+                    </span>
+                </div>
             </div>
         </div>
-        </div>
-    </a>
+    </div>
 
-    <!-- TECHMOMS -->
-    <a href="./techmoms/" style="text-decoration: none;">
-        <div class="proj-card">
-        <canvas class="proj-aura-canvas" id="c-techmoms"></canvas>
-        <div class="proj-card-overlay"></div>
-        <div class="proj-card-body">
-            <p class="proj-card-tag">Social Impact · Sep 2023</p>
-            <h2 class="proj-card-title">TechMoms — <em>1st Place</em></h2>
-            <p class="proj-card-desc">Won 1st of 32 submissions. Marketing strategy, pitch deck & landing page to drive program enrollment.</p>
-            <div class="proj-card-meta">
-            <span class="proj-tool">Adobe Express</span>
-            <span class="proj-tool">Canva</span>
-            <span class="proj-tool">Strategy</span>
-            <div class="proj-arrow">↗</div>
+    <!-- TICKER -->
+    <div class="ticker-wrap">
+        <div class="ticker-track" id="ticker">
+            <!-- filled by JS -->
+        </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section-wrap" id="work">
+        <div class="section-head">
+            <span>Selected work</span>
+            <hr>
+        </div>
+        <div class="proj-grid">
+
+            <!-- SOUR -->
+            <a href="./sour/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                <div class="proj-card">
+                    <canvas class="proj-aura-canvas" id="c-sour"></canvas>
+                    <div class="proj-card-overlay"></div>
+                    <div class="proj-card-body">
+                        <p class="proj-card-tag">Mobile App · 2022 – Present</p>
+                        <h2 class="proj-card-title">SOUR — <em>Secondhand<br>Fashion</em></h2>
+                        <p class="proj-card-desc">Social eCommerce app making secondhand fashion accessible. $2,700
+                            funded · Top 8 Tim Draper Challenge.</p>
+                        <div class="proj-card-meta">
+                            <span class="proj-tool">Figma</span>
+                            <span class="proj-tool">Python</span>
+                            <span class="proj-tool">React Native</span>
+                            <span class="proj-tool">AWS</span>
+                            <div class="proj-arrow">↗</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- TECHMOMS -->
+            <a href="./techmoms/" style="text-decoration: none;">
+                <div class="proj-card">
+                    <canvas class="proj-aura-canvas" id="c-techmoms"></canvas>
+                    <div class="proj-card-overlay"></div>
+                    <div class="proj-card-body">
+                        <p class="proj-card-tag">Social Impact · Sep 2023</p>
+                        <h2 class="proj-card-title">TechMoms — <em>1st Place</em></h2>
+                        <p class="proj-card-desc">Won 1st of 32 submissions. Marketing strategy, pitch deck & landing
+                            page to drive program enrollment.</p>
+                        <div class="proj-card-meta">
+                            <span class="proj-tool">Adobe Express</span>
+                            <span class="proj-tool">Canva</span>
+                            <span class="proj-tool">Strategy</span>
+                            <div class="proj-arrow">↗</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- CHIP COOKIES -->
+            <a href="./chipcookies/" style="text-decoration: none;">
+                <div class="proj-card">
+                    <canvas class="proj-aura-canvas" id="c-chip"></canvas>
+                    <div class="proj-card-overlay"></div>
+                    <div class="proj-card-body">
+                        <p class="proj-card-tag">UX / Product Design · Oct 2022 – Dec 2023</p>
+                        <h2 class="proj-card-title">Chip Cookies — <em>Mobile Redesign</em></h2>
+                        <p class="proj-card-desc">Prototyped a full mobile app redesign in Adobe XD. Presented a pitch
+                            deck making the business case for the redesign to stakeholders.</p>
+                        <div class="proj-card-meta">
+                            <span class="proj-tool">Adobe XD</span>
+                            <span class="proj-tool">Prototyping</span>
+                            <span class="proj-tool">Pitch Deck</span>
+                            <div class="proj-arrow">↗</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- ABOUT + EXP -->
+    <div class="about-grid" id="about">
+        <div class="about-card">
+            <p class="about-label">About</p>
+            <p class="about-text">Bachelors of Science in <em>Software Engineering</em> with a minor in
+                <em>Entrepreneurship</em>. I care as much about how something is built as why it's built.</p>
+            <a class="about-link" href="mailto:emmahluk@gmail.com">Get in touch →</a>
+        </div>
+        <div class="about-card">
+            <p class="about-label">Experience</p>
+            <div class="exp-row">
+                <div>
+                    <div class="exp-role">Software Engineer Intern</div>
+                    <div class="exp-org">Radian</div>
+                </div>
+                <div class="exp-date">2025</div>
+            </div>
+            <div class="exp-row">
+                <div>
+                    <div class="exp-role">Teaching Assistant</div>
+                    <div class="exp-org">Kahlert School of Computing</div>
+                </div>
+                <div class="exp-date">2023 – 24</div>
+            </div>
+            <div class="exp-row">
+                <div>
+                    <div class="exp-role">BS Software Development</div>
+                    <div class="exp-org">University of Utah · GPA 3.9</div>
+                </div>
+                <div class="exp-date">2021 – 25</div>
+            </div>
+            <div class="exp-row">
+                <div>
+                    <div class="exp-role">Kahlert Scholar · Dean's List</div>
+                    <div class="exp-org">4 consecutive years</div>
+                </div>
+                <div class="exp-date">2021 – 25</div>
             </div>
         </div>
-        </div>
-    </a>
-
-    <!-- CHIP COOKIES -->
-    <a href="./chipcookies/" style="text-decoration: none;">
-        <div class="proj-card">
-        <canvas class="proj-aura-canvas" id="c-chip"></canvas>
-        <div class="proj-card-overlay"></div>
-        <div class="proj-card-body">
-            <p class="proj-card-tag">UX / Product Design · Oct 2022 – Dec 2023</p>
-            <h2 class="proj-card-title">Chip Cookies — <em>Mobile Redesign</em></h2>
-            <p class="proj-card-desc">Prototyped a full mobile app redesign in Adobe XD. Presented a pitch deck making the business case for the redesign to stakeholders.</p>
-            <div class="proj-card-meta">
-            <span class="proj-tool">Adobe XD</span>
-            <span class="proj-tool">Prototyping</span>
-            <span class="proj-tool">Pitch Deck</span>
-            <div class="proj-arrow">↗</div>
-            </div>
-        </div>
-        </div>
-    </a>
-
-  </div>
-</div>
-
-<!-- ABOUT + EXP -->
-<div class="about-grid" id="about">
-  <div class="about-card">
-    <p class="about-label">About</p>
-    <p class="about-text">Bachelors of Science in <em>Software Engineering</em> with a minor in <em>Entrepreneurship</em>. I care as much about how something is built as why it's built.</p>
-    <a class="about-link" href="mailto:emmahluk@gmail.com">Get in touch →</a>
-  </div>
-  <div class="about-card">
-    <p class="about-label">Experience</p>
-    <div class="exp-row">
-      <div>
-        <div class="exp-role">Software Engineer Intern</div>
-        <div class="exp-org">Radian</div>
-      </div>
-      <div class="exp-date">2025</div>
     </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-role">Teaching Assistant</div>
-        <div class="exp-org">Kahlert School of Computing</div>
-      </div>
-      <div class="exp-date">2023 – 24</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-role">BS Software Development</div>
-        <div class="exp-org">University of Utah · GPA 3.9</div>
-      </div>
-      <div class="exp-date">2021 – 25</div>
-    </div>
-    <div class="exp-row">
-      <div>
-        <div class="exp-role">Kahlert Scholar · Dean's List</div>
-        <div class="exp-org">4 consecutive years</div>
-      </div>
-      <div class="exp-date">2021 – 25</div>
-    </div>
-  </div>
-</div>
 
-<!-- FOOTER -->
-<footer>
-  <p class="footer-hl">Let's build something<br><em>worth keeping.</em></p>
-  <div class="footer-right">
-    <div class="footer-socials">
-        <a href="https://github.com/emma-luky" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-            <img src="assets/GitHub_Invertocat_Black_Clearspace.svg" alt="GitHub Logo" width="20" height="20">
-        </a>
-        <a href="https://www.linkedin.com/in/emma-h-luk/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-            <img src="assets/linkedin-svgrepo-com.svg" alt="LinkedIn Logo" width="15" height="15">
-        </a>
-    </div>
-    <a class="footer-email" href="mailto:emmahluk@gmail.com">emmahluk@gmail.com</a>
-    <p class="footer-copy">© 2025 Emma Luk</p>
-  </div>
-</footer>
+    <!-- FOOTER -->
+    <script src="./components/footer.js"></script>
+    <script>createFooter('./assets');</script>
 
-<script src="components/ticker.js"></script>
-<script src="components/aura.js"></script>
+    <script src="components/ticker.js"></script>
+    <script src="components/aura.js"></script>
 
 </body>
+
 </html>
