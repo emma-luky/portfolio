@@ -13,7 +13,7 @@ function createFooter(assetPath) {
         </a>
       </div>
       <a class="footer-email" href="mailto:emmahluk@gmail.com">emmahluk@gmail.com</a>
-      <p class="footer-copy">© 2025 Emma Luk</p>
+      <p class="footer-copy">© 2026 Emma Luk</p>
     </div>
   `;
 
