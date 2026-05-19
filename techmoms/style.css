@@ -92,6 +92,10 @@
   background: var(--white); border-radius: 14px;
   overflow: hidden; border: 1px solid var(--border);
 }
+.deliverable-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+}
 .deliverable-img {
   height: 220px; background: var(--plum);
   position: relative; overflow: hidden;
