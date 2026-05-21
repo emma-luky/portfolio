@@ -22,3 +22,9 @@ Built with HTML, CSS, and JavaScript — no frameworks or build tools. Hosted on
 
 - **Animations** — canvas-based aura painter with animated radial gradient blobs
 - **Components** — lightweight JS components for shared UI (footer, next-project cards, lightbox)
+
+---
+
+## License
+
+Design and content © 2026 Emma Luk. All rights reserved.
