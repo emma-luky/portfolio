@@ -112,6 +112,20 @@
 .principle-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
 .principle-desc  { font-size: 13px; color: var(--muted); line-height: 1.65; }
 
+.screenshots {
+    padding-top: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.screenshot {
+    height: 500px;
+    width: auto;
+    object-fit: contain;
+}
+
 /* ── PROTOTYPE SPLIT ── */
 .prototype-split {
     max-width: 900px; margin: 48px auto 0; padding: 0 48px;
